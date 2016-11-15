@@ -2,6 +2,9 @@ package org.firstinspires.ftc.robotcontroller.internal.FirstResq;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
+import org.firstinspires.ftc.robotcontroller.internal.general.Movement;
+import org.firstinspires.ftc.robotcontroller.internal.general.ServoMovement;
+
 /**
  * Created by phama21 on 9/13/2015.
  */

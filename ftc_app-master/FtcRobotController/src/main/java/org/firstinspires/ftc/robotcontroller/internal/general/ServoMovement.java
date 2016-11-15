@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.robotcontroller.internal.FirstResq;
+package org.firstinspires.ftc.robotcontroller.internal.general;
 
 import com.qualcomm.robotcore.hardware.Servo;
 

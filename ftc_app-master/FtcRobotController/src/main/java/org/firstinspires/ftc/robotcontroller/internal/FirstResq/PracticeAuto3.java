@@ -4,6 +4,8 @@ import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cGyro;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.Servo;
 
+import org.firstinspires.ftc.robotcontroller.internal.general.MovementAuto;
+
 //import com.qualcomm.hardware.ModernRoboticsI2cGyro;
 
 /**

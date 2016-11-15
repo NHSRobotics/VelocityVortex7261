@@ -36,7 +36,14 @@ import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 import com.qualcomm.robotcore.eventloop.opmode.AnnotatedOpModeRegistrar;
 import org.firstinspires.ftc.robotcontroller.external.samples.ConceptNullOp;
+import org.firstinspires.ftc.robotcontroller.internal.VelocityVortex.BallLiftTest;
+import org.firstinspires.ftc.robotcontroller.internal.VelocityVortex.CameraAutonomous;
+import org.firstinspires.ftc.robotcontroller.internal.VelocityVortex.FirstCompAutonomous;
+import org.firstinspires.ftc.robotcontroller.internal.VelocityVortex.FirstCompTeleOp;
+import org.firstinspires.ftc.robotcontroller.internal.VelocityVortex.NoCameraAutonomous;
 import org.firstinspires.ftc.robotcontroller.internal.VelocityVortex.PaddleTest;
+import org.firstinspires.ftc.robotcontroller.internal.VelocityVortex.SecondCompAutonomous;
+import org.firstinspires.ftc.robotcontroller.internal.VelocityVortex.SimpleTeleOp;
 
 /**
  * {@link FtcOpModeRegister} is responsible for registering opmodes for use in an FTC game.
@@ -78,6 +85,10 @@ public class FtcOpModeRegister implements OpModeRegister {
         /**
          * Any manual OpMode class registrations should go here.
          */
-        manager.register("Paddle Test", PaddleTest.class);
+        manager.register("TeleOp", FirstCompTeleOp.class);
+        manager.register("Simple TeleOp", SimpleTeleOp.class);
+        manager.register("Lift Test", BallLiftTest.class);
+        manager.register("Autonomous", SecondCompAutonomous.class);
+        manager.register("Autonomous with Camera", CameraAutonomous.class);
     }
 }

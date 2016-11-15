@@ -2,9 +2,11 @@ package org.firstinspires.ftc.robotcontroller.internal.FirstResq;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.ColorSensor;
-import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.GyroSensor;
+
+import org.firstinspires.ftc.robotcontroller.internal.general.MovementAuto;
+import org.firstinspires.ftc.robotcontroller.internal.general.ServoMovementAuto;
 
 /**
  * Created by 7260 on 11/20/2015.

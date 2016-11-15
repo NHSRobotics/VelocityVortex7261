@@ -4,6 +4,8 @@ package org.firstinspires.ftc.robotcontroller.internal.FirstResq;
 import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cGyro;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
+import org.firstinspires.ftc.robotcontroller.internal.general.Movement;
+
 /**
  * Created by 7260 on 1/15/2016.
  */

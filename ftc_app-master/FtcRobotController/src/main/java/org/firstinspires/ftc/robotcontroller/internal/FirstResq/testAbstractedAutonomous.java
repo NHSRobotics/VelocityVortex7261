@@ -9,6 +9,8 @@ import com.qualcomm.robotcore.hardware.LegacyModule;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
+import org.firstinspires.ftc.robotcontroller.internal.general.MovementAuto;
+
 /**
  * Created by 7260 on 2/25/2016.
  */
@@ -60,7 +62,7 @@ public class testAbstractedAutonomous extends OpMode {
     }
 
     public void loop(){
-        switch (state) {
+        /*switch (state) {
             case 0:
                 Chassis.resetEncoders();
                 if(gyro.isCalibrating()) {
@@ -152,6 +154,6 @@ public class testAbstractedAutonomous extends OpMode {
             default:
                 break;
 
-        }
+        }*/
     }
 }

@@ -4,7 +4,6 @@ import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cGyro;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
-import org.firstinspires.ftc.robotcontroller.internal.FirstResq.Movement;
 
 /**
  * Created by 7260 on 9/16/2016.
@@ -53,26 +52,12 @@ public class MovementAuto extends Movement {
 
     }
 
-    public boolean forwardDriveAuto(double distance) {
-        runUsingEncoders();
-
-        //
-        //Moves the chassis forward at half speed
-        //
-        leftMotor.setPower(.3);
-        rightMotor.setPower(.3);
-
-        //
-        //Calculates the number of counts the encoders have to reach in order to go 2ft
-        //
+    public void setDistance(double distance) {
         counts = ENCODER_CPR * (distance / (Math.PI * wheelDiameter)) * gearRatio;
+    }
 
-        //
-        //Checks if the motors have ran to 2ft
-        //
-        //After reaching 2ft, stops the motors and resets the encoders
-        //
-        if (Math.abs(leftMotor.getCurrentPosition()) >= counts && Math.abs(rightMotor.getCurrentPosition()) >= counts) {
+    public boolean checkDistance(double givenCounts) {
+        if (Math.abs(leftMotor.getCurrentPosition()) >= givenCounts && Math.abs(rightMotor.getCurrentPosition()) >= givenCounts) {
             leftMotor.setPower(0);
             rightMotor.setPower(0);
 
@@ -82,6 +67,16 @@ public class MovementAuto extends Movement {
         } else {
             return false;
         }
+    }
+
+    public void forwardDriveAuto() {
+        runUsingEncoders();
+
+        //
+        //Moves the chassis forward at half speed
+        //
+        leftMotor.setPower(.3);
+        rightMotor.setPower(.3);
     }
 
     public boolean backwardDriveAuto(double distance) {
@@ -175,6 +170,7 @@ public class MovementAuto extends Movement {
         if ((gyro.getIntegratedZValue() >= angleTarget) || (System.currentTimeMillis() - last > 2)) {
             if ( i == 5) {
                 stopDrive();
+                first = true;
                 resetEncoders();
                 return true;
             } else {
@@ -214,6 +210,7 @@ public class MovementAuto extends Movement {
         if ((gyro.getIntegratedZValue() <= angleTarget) || (System.currentTimeMillis() - last > 2)) {
             if ( i == 5) {
                 stopDrive();
+                first = true;
                 resetEncoders();
                 return true;
             } else {

@@ -14,6 +14,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity;
 
 import java.io.ByteArrayOutputStream;
+import java.util.List;
 
 /**
  * TeleOp Mode
@@ -114,9 +115,13 @@ public class LinearOpModeCamera extends LinearOpMode {
 
     Camera.Parameters parameters = camera.getParameters();
 
-    width = parameters.getPreviewSize().width / ds;
-    height = parameters.getPreviewSize().height / ds;
-    parameters.setPreviewSize(width, height);
+    //width = parameters.getPreviewSize().width / ds;
+    //height = parameters.getPreviewSize().height / ds;
+    //parameters.setPreviewSize(width, height);
+
+    List<Camera.Size> previewSizes = parameters.getSupportedPreviewSizes();
+    Camera.Size previewSize = previewSizes.get(0);
+    parameters.setPreviewSize(previewSize.width, previewSize.height);
 
     camera.setParameters(parameters);
 

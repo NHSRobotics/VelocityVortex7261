@@ -13,6 +13,8 @@ import com.qualcomm.robotcore.hardware.LegacyModule;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
+import org.firstinspires.ftc.robotcontroller.internal.general.MovementAuto;
+
 /**
  * Created by 7260 on 11/20/2015.
  */
